@@ -6,5 +6,6 @@ added everything
 removed calculator due to a major bug,
 added more text to dice 
 and fixed clitest
+
 #update 1.1
 added calculator back (yea, that's it)
