@@ -1,44 +1,41 @@
+#commands are help, ver, notepad, infinity, changelog, dice, calculator
 import random
-helptext = "commands are help, ver, notepad, infinity, changelog, dice, calculator"
-# this is a the user types on. \n is a new line
-cmd = input("|Type a command type help for cmds|\n▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪\n► ")
-if cmd not in helptext:
-    print("invalid command")
-elif "help" in cmd:
-  print(helptext)
-  print("re-run program to type new command↺ ")
-elif "ver" in cmd:
-  print("pyethonOS 1.2")
-elif "notepad" in cmd:
-    while True:
-     text = input("| ")
-    print(text)
-elif "infinity" in cmd:
-    while True:
-     print("This will run forever.")
-elif "changelog" in cmd:
-    print("bug fixes\n ❒added calculator")
-elif "commands" in cmd:
-    print("invalid command")
-elif "are" in cmd:
-    print("invalid command")
-elif "dice" in cmd:
-    print("you rolled a...")
-    print(random.randrange(1, 6))
-elif "calculator" in cmd:
-    print((lambda n1, op, n2: n1 + n2 if op == "1" else n1 - n2 if op == "2" else n1 * n2 if op == "3" else n1 / n2 if op == "4" else "Invalid")(float(input("type 1st number: ")), input("type 1 for add\ntype 2 for subtract\ntype 3 for multiply\ntype 4 for divide: "), float(input("type 2nd number: "))))
-
-"""
- the old calculator code
-    num1 = float(input("type 1st number: ")) 
-calc1 = input("type 1 for add\ntype 2 for subtract\ntype 3 for multiply\ntype 4 for divide: ")
-num2 = float(input("type 2nd number: "))
-if calc1 == "1":
-    print(num1 + num2)
-elif calc1 == "2":
-    print(num1 - num2)
-elif calc1 == "3":
-    print(num1 * num2)
-elif calc1 == "4":
-    print(num1 / num2)
-"""
+print("|Type a command type help for cmds|\n"
+      "▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪")
+while True:
+    cmd = input("► ")
+    match cmd:
+        case "help":
+            print("commands are: \n◇help,\n◇ver,\n◇notepad,\n◇infinity, \n◇changelog,\n◇dice,\n◇calculator")
+        case "ver":
+            print("pyethonOS 1.2.1")
+        case "notepad":
+            print("▪▪▪▪▪▪Notepad(Type exit to quit)▪▪▪▪▪▪")
+            while True:
+                text = input("| ")
+                if text == "exit": break
+        case "infinity":
+                while True:
+                    print("this will run forever")
+        case "changelog":
+            print("bug fixes\n ❒now you can finally use as many commands as you want without re-running the program\n ❒changed some ui")
+        case "dice":
+            print("you rolled a...", random.randrange(1, 6))
+        case "calculator":
+            try:
+                n1 = float(input("type 1st number: "))
+                op = input("type 1 for add, 2 for subtract, 3 for multiply, 4 for divid: ")
+                n2 = float(input("type 2nd number: "))
+                result = (lambda n1, op, n2: 
+                          n1 + n2 if op == '1' else 
+                          n1 - n2 if op == '2' else 
+                          n1 * n2 if op == '3' else 
+                          n1 / n2 if op == '4' else "Invalid")(n1, op, n2)
+                print("Result:", result)
+            except ValueError:
+                print("Invalid input")
+        case "":
+            print("►")
+        case _:
+            print("invalid command")
+#yippe it work
