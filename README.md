@@ -8,5 +8,7 @@ added more text to dice
 and fixed clitest
 # update 1.1
 added calculator
-# 1.2
+# update 1.2
 now you can execute as much commands as you want without re-running the program
+## update 1.2.1
+made the ui cooler :D
