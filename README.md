@@ -12,3 +12,5 @@ added calculator
 now you can execute as much commands as you want without re-running the program
 ## update 1.2.1
 made the ui cooler :D
+# update 1.3
+the largest update yet, added time and logo. you can now save notepad as .txt 
