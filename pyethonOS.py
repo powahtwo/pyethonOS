@@ -1,4 +1,4 @@
-#commands are help, ver, notepad, infinity, changelog, dice, calculator
+#commands are help, ver, notepad, infinity, changelog, dice, clculator
 import art
 import datetime
 import random
